@@ -12,25 +12,25 @@ import {
 import {
   selectContacts,
   selectIsLoading,
-  selectEerror,
+  selectError,
   selectFilter,
 } from 'redux/contactsSelector';
 import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
 
-export function App() {
+export const App = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectEerror);
+  const error = useSelector(selectError);
   const filter = useSelector(selectFilter);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const habdleAddContact = (name, number) => {
+  const handleAddContact = (name, number) => {
     const newContact = {
       name,
       number,
@@ -60,7 +60,7 @@ export function App() {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm onAddContact={habdleAddContact} contacts={contacts} />
+      <ContactForm onAddContact={handleAddContact} contacts={contacts} />
       <h2>Contacts</h2>
       {isLoading && (
         <RotatingLines
@@ -79,4 +79,4 @@ export function App() {
       />
     </div>
   );
-}
+};
