@@ -28,6 +28,7 @@ export default function ContactForm({ contacts, onAddContact }) {
       setName('');
       setNumber('');
     }
+    e.currentTarget.reset();
   };
 
   return (
