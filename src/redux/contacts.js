@@ -46,7 +46,7 @@ export const deleteContacts = createAsyncThunk(
 
 const INITIAL_STATE = {
   contacts: {
-    items: null,
+    items: [],
     isLoading: false,
     error: null,
   },
