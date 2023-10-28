@@ -15,6 +15,6 @@ export const requestAddContact = async newProduct => {
 };
 
 export const requestDeleteContact = async productId => {
-  const { data } = await contactsInstance.delete(`/contacts${productId}`);
+  const { data } = await contactsInstance.delete(`/contacts/${productId}`);
   return data;
 };
