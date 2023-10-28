@@ -49,10 +49,9 @@ export const App = () => {
 
   const getFilteredContacts = () => {
     const normalizedFilter = filter.toLowerCase();
-    contacts !== undefined &&
-      contacts.filter(contact =>
-        contact.name.toLowerCase().includes(normalizedFilter)
-      );
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
   };
 
   const filteredContacts = getFilteredContacts();
