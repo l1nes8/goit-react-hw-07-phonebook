@@ -43,8 +43,8 @@ export const App = () => {
     dispatch(deleteContacts(contactId));
   };
 
-  const handleFilterTerm = ({ target: { value } }) => {
-    dispatch(setFilter(value));
+  const handleFilterTerm = filter => {
+    dispatch(setFilter(filter));
   };
 
   const getFilteredContacts = () => {
